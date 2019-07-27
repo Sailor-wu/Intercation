@@ -19,12 +19,12 @@ public class DB {
 		try{
 			Properties properties = PropertiesUtil.getProperties("db.properties");
 			sqlMap = SqlMapClientBuilder.buildSqlMapClient(Resources.getResourceAsReader("sqlmap-config.xml"), properties);
-			if(!Config.IS_MIDDLE){
-				Properties properties2 = PropertiesUtil.getProperties("db_admin.properties");
-				if(properties2 != null){
-					sqlMapAdmin = SqlMapClientBuilder.buildSqlMapClient(Resources.getResourceAsReader("sqlmap-config-admin.xml"), properties2);
-				}
-			}
+//			if(!Config.IS_MIDDLE){
+//				Properties properties2 = PropertiesUtil.getProperties("db_admin.properties");
+//				if(properties2 != null){
+//					sqlMapAdmin = SqlMapClientBuilder.buildSqlMapClient(Resources.getResourceAsReader("sqlmap-config-admin.xml"), properties2);
+//				}
+//			}
 		}catch(Exception e){
 			e.printStackTrace();
 		}
