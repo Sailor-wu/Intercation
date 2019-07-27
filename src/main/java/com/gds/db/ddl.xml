@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="DDL">
+	<typeAlias alias="AlterColumn" type="com.gds.db.AlterColumn" />	
+	<typeAlias alias="FieldStru" type="com.gds.db.FieldStru" />
+	<typeAlias alias="KeyStru" type="com.gds.db.KeyStru" />
+	<!-- 新增表  --> 
+	<update id="createTable" parameterClass="String">
+		create table $value$
+	</update>
+	
+	<!-- 新增字段  --> 
+	<update id="addColumn" parameterClass="AlterColumn">  
+		alter table $tbname$ add column $field$ $type$ $isNull$ $defVal$ COMMENT #comment#;
+	</update>
+	
+	<!-- 修改字段  --> 
+	<update id="modifyColumn" parameterClass="AlterColumn">  
+		alter table $tbname$ modify column $field$ $type$ $isNull$ $defVal$ COMMENT #comment#;
+	</update>
+	
+	<!-- 删除字段  --> 
+	<update id="dropColumn" parameterClass="map">
+		ALTER TABLE $tbname$ DROP COLUMN $fieldName$
+	</update>
+	
+	<select id="descTable" resultClass="FieldStru" parameterClass="String">
+		desc $table$;
+	</select>	
+	
+	<select id="showKeys" parameterClass="String" resultClass="KeyStru">
+		show keys from $tbname$
+	</select>
+	<!-- 查找起始值 -->
+	<select id="findAutoIncrement" resultClass="java.util.HashMap">
+		SELECT table_name,auto_increment FROM information_schema.tables WHERE table_schema=database() and auto_increment is not null;
+	</select>
+
+	<update id="modifyIndex" parameterClass="String">
+		alter table $value$ USING BTREE
+	</update>
+	
+	<update id="dropIndex" parameterClass="map">
+		alter table $tbname$ DROP INDEX $keyname$
+	</update>
+	<!-- 修改起始id -->
+	<update id="alterAutoId" parameterClass="map">
+		alter table $tbname$ auto_increment=$autoId$
+	</update>
+</sqlMap>
