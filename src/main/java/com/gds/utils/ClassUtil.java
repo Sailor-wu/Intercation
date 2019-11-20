@@ -7,7 +7,6 @@ import java.util.List;
 
 /**
  * 类工具类
- * @author yxh
  *
  */
 public class ClassUtil {
