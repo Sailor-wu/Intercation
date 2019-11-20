@@ -1,7 +1,6 @@
 package com.pub.link;
 
 import java.util.Iterator;
-import java.util.LinkedList;
 /**
  * 实现自定义栈 和迭代接口
  * 迭代接口在内部类实现
@@ -110,7 +109,6 @@ public class LinkListStatck<Item> implements Stack<Item>,Iterable<Item>{
 		for (String string : (LinkListStatck<String>)stacks) {
 			System.out.println(string);
 		}
-		
 		
 	}
 }

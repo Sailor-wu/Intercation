@@ -15,6 +15,7 @@ public class TestArr {
 		try {			
 			// 创建一个arrayList集合 ,初始长度给5个
 			ArrayList<Integer> list = new ArrayList<Integer>(5);
+			@SuppressWarnings("rawtypes")
 			Class<? extends List> clazz = list.getClass();
 			Field f = clazz.getDeclaredField("elementData");
 			f.setAccessible(true);

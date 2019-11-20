@@ -50,6 +50,7 @@ public class AsyncList<E> {
         elementData[--size] = null;
 	}
 	
+	@SuppressWarnings("unchecked")
 	public  E  get(int index) {
 		rangeCheck(index);
 		return (E) elementData[index];
