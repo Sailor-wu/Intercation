@@ -55,6 +55,12 @@ public class TestArr {
 	        for (Integer i : removeList) {
 	            System.out.print(i + " ");
 	        }
+	        System.out.println();
+	        
+	        int [] ar= {1,1,2,2,22};
+	        for (int i = 0; i < ar.length; i++) {
+				System.out.println(ar[i]);
+			}
 			
 		} catch (Exception e) {
 			// TODO: handle exception

@@ -1,7 +1,5 @@
 package com.pub.map;
 
-import java.io.ObjectInputStream.GetField;
-
 /**
  * 使用二维数组实现Map集合
  * @author JOINT
@@ -27,6 +25,7 @@ public class ArrImplMap<E, V, K> {
 	 * @param key
 	 * @param value
 	 */
+	@SuppressWarnings("unchecked")
 	public void put(K key,V  value) {
 		// 不存在就增加一条记录
 		if(!isRepeat(map,key,value)) {
@@ -111,7 +110,7 @@ public class ArrImplMap<E, V, K> {
 		ArrImplMap map = new ArrImplMap();
 		
 		map.put("this", 123456);
-		
+		map.put("this", 22212456);
 		System.out.println(map.get("this"));
 		
 		map.clear();

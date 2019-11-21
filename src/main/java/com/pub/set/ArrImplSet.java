@@ -1,5 +1,7 @@
 package com.pub.set;
 
+import java.util.concurrent.CopyOnWriteArraySet;
+
 /**
  * 数组实现set集合
  * @author JOINT
@@ -122,6 +124,8 @@ public class ArrImplSet<E>{
 		for (int i = 0; i < set.size; i++) {
 			System.out.println(set.get(i));	
 		}
+		
+		
 		
 	
 	}
