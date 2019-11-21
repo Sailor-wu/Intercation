@@ -9,6 +9,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class CopySet {
 
+	
 	public static void main(String[] args) {
 		// 实例化一个CopyOnWriteSet 对象
 		Set<String> set = new CopyOnWriteArraySet<>();

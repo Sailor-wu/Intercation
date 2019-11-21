@@ -14,6 +14,7 @@ public class CopyList {
 		
 		List<Integer> tempList1 = Arrays.asList(new Integer [] {1,2,3});
 		List<Integer> tempList = new CopyOnWriteArrayList<Integer>(tempList1);
+		
 //		List<Integer> tempList = new ArrayList<Integer>(tempList1);
 		//2、模拟多线程对list进行读和写
         ExecutorService executorService = Executors.newFixedThreadPool(10);

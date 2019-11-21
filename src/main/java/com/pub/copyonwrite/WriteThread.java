@@ -16,6 +16,7 @@ public class WriteThread implements Runnable {
 		this.list = list;
 	}
 
+	
 	@Override
 	public void run() {
 		int nextInt = new Random().nextInt();

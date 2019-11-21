@@ -15,6 +15,7 @@ public class ReadThread implements Runnable {
 		this.list = list;
 	}
 
+	
 	@Override
 	public void run() {
 		System.out.print("线程："+Thread.currentThread().getName()+"\t");
