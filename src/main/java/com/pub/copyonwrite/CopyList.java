@@ -1,6 +1,5 @@
 package com.pub.copyonwrite;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -25,8 +24,7 @@ public class CopyList {
         executorService.execute(new ReadThread(tempList));
         executorService.execute(new WriteThread(tempList));
         executorService.execute(new ReadThread(tempList));
-System.out.println(tempList.size());
 //        tempList1.add(123);
-        
+        executorService.shutdown();
 	}
 }
