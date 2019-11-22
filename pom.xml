@@ -74,7 +74,16 @@
 		    <groupId>org.openjdk.jmh</groupId>
 		    <artifactId>jmh-generator-annprocess</artifactId>
 		    <version>1.19</version>
-		</dependency>		
+		</dependency>	
+		<!-- 高性能队列jar -->
+		<!-- https://mvnrepository.com/artifact/com.lmax/disruptor -->
+		<dependency>
+		    <groupId>com.lmax</groupId>
+		    <artifactId>disruptor</artifactId>
+		    <version>3.4.2</version>
+		</dependency>
+				
+			
 	</dependencies>
 	
 	
