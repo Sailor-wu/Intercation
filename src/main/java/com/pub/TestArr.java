@@ -1,6 +1,9 @@
 package com.pub;
 
-import java.lang.reflect.Field;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.atomic.LongAdder;
 
 public class TestArr {
 
@@ -75,16 +78,62 @@ public class TestArr {
 //		System.out.println(e == f);
 		
 		
-		 Class cache = Integer.class.getDeclaredClasses()[0]; //1
-	      Field myCache = cache.getDeclaredField("cache"); //2
-	      myCache.setAccessible(true);//3
-	      Integer[] newCache = (Integer[]) myCache.get(cache); //4
-	      newCache[132] = newCache[133]; //5
-//	      
-	      int a = 2;
-	      int b = a + a;
-	      System.out.printf("%d + %d = %d", a, a, b); //
+//		 Class cache = Integer.class.getDeclaredClasses()[0]; //1
+//	      Field myCache = cache.getDeclaredField("cache"); //2
+//	      myCache.setAccessible(true);//3
+//	      Integer[] newCache = (Integer[]) myCache.get(cache); //4
+//	      newCache[132] = newCache[133]; //5
+////	      
+//	      int a = 2;
+//	      int b = a + a;
+//	      System.out.printf("%d + %d = %d", a, a, b); //
+		
+		
+		LongAdder adder = new LongAdder();
+//		Long adder = new Long(0);
+		ExecutorService executorService = Executors.newFixedThreadPool(8);
+		
+		executorService.execute(new Runnable() {
+			@Override
+			public void run() {
+				for (int i = 0; i < 20; i++) {
+					adder.increment();
+					System.out.println(Thread.currentThread().getName()+"：\t"+adder);
+					try {
+						Thread.sleep(10);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			}
+		});
+		executorService.execute(new Runnable() {
+			@Override
+			public void run() {
+				for (int i = 0; i < 20; i++) {
+					adder.increment();
+					System.out.println(Thread.currentThread().getName()+"：\t"+adder);
+					try {
+						Thread.sleep(10);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			}
+		});
+		
+		
+		executorService.shutdown();
+//		for (int i = 0; i < 20; i++) {
+////			ThreadLocalRandom random =  ThreadLocalRandom.current();
+////			System.out.println(	random.nextInt(5));
+//			adder.increment();
+//			System.out.println(adder);
+//		}
 		
 	}
+	
 
 }
