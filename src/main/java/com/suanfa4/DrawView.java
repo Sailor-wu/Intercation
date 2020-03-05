@@ -2,6 +2,8 @@ package com.suanfa4;
 
 import java.util.Stack;
 
+import edu.princeton.cs.algs4.StdOut;
+
 public class DrawView {
 
 	public static void main(String[] args) {
@@ -27,7 +29,8 @@ public class DrawView {
 //		System.out.println(almighty);
 		
 		// 使用栈的方式转换成二进制，栈的特性，先进后出
-		useStack();
+//		useStack();
+		StdOut.print("adsad");
 	}
 	private static void useStack() {
 		Stack<Integer> integers = new Stack<Integer>();
