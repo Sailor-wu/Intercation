@@ -1,11 +1,9 @@
 package com.suanfa4;
 
-import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 
 public class AssertKMP {
 	@SuppressWarnings("resource")
@@ -20,7 +18,7 @@ public class AssertKMP {
 
 	private static void assertKmp() throws FileNotFoundException {
 		// 查找的字符
-		String paString = "中国的撒旦";
+		String paString = "撒旦";
 		String searchStr = "abcdabcsabg";
 		File file = new File("src/main/java/com/suanfa4/source.txt");
 		FileInputStream fileInputStream = new FileInputStream(file);
@@ -34,9 +32,9 @@ public class AssertKMP {
 		}
 		
 		
-		// 源文本串
 		KMP kmp = new KMP(paString);
 		// 返回找到的下标
+		// 源文本串
 		int search = kmp.search(searchStr);
 		System.out.println(search);
 		if (search >=0) {			
