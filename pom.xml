@@ -92,18 +92,33 @@
 
 		<!-- https://mvnrepository.com/artifact/edu.princeton.cs/algs4 -->
 		<dependency>
-		    <groupId>edu.princeton.cs</groupId>
-		    <artifactId>algs4</artifactId>
-		    <version>1.0.3</version>
+			<groupId>edu.princeton.cs</groupId>
+			<artifactId>algs4</artifactId>
+			<version>1.0.3</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.codahale.metrics/metrics-core -->
 		<dependency>
-		    <groupId>com.codahale.metrics</groupId>
-		    <artifactId>metrics-core</artifactId>
-		    <version>3.0.2</version>
+			<groupId>com.codahale.metrics</groupId>
+			<artifactId>metrics-core</artifactId>
+			<version>3.0.2</version>
 		</dependency>
 
+		<!-- pdf转换器 -->
+		<!-- https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox -->
+		<dependency>
+			<groupId>org.apache.pdfbox</groupId>
+			<artifactId>pdfbox</artifactId>
+			<version>2.0.19</version>
+		</dependency>
+
+		<!-- 图片转文字 -->
+		<!-- https://mvnrepository.com/artifact/net.sourceforge.tess4j/tess4j -->
+		<dependency>
+			<groupId>net.sourceforge.tess4j</groupId>
+			<artifactId>tess4j</artifactId>
+			<version>4.5.1</version>
+		</dependency>
 
 	</dependencies>
 
