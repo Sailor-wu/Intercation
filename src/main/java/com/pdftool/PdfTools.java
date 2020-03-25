@@ -94,14 +94,14 @@ public class PdfTools {
              // 一页一页读取
              for (int i = 0; i < pageSize; i++) {
                  // 文本内容
-                 PDFTextStripper stripper = new PDFTextStripper();
-                 // 设置按顺序输出
-                 stripper.setSortByPosition(true);
-                 stripper.setStartPage(i + 1);
-                 stripper.setEndPage(i + 1);
-                 String text = stripper.getText(document);
-                 System.out.println(text.trim());
-                 System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-");
+//                 PDFTextStripper stripper = new PDFTextStripper();
+//                 // 设置按顺序输出
+//                 stripper.setSortByPosition(true);
+//                 stripper.setStartPage(i + 1);
+//                 stripper.setEndPage(i + 1);
+//                 String text = stripper.getText(document);
+//                 System.out.println(text.trim());
+//                 System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-");
                  // 图片内容
                  PDPage page = document.getPage(i);
                  PDResources resources = page.getResources();
@@ -129,6 +129,8 @@ public class PdfTools {
                              instance.setDatapath("D:\\tessdata"); //相对目录，这个时候tessdata目录和src目录平级
 //                           instance.setDatapath("E:\\myProgram\\java\\ocrdemo\\tessdata");//支持绝对目录
                              instance.setLanguage("chi_sim");//选择字库文件（只需要文件名，不需要后缀名）
+                             instance.setTessVariable("user_defined_dpi", "70");
+
                              try {
                                  File imageFile = new File("D:\\sf\\" + randomUUID + ".png");
                                  String result = instance.doOCR(imageFile);//开始识别
