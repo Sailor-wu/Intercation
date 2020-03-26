@@ -119,6 +119,13 @@
 			<artifactId>tess4j</artifactId>
 			<version>4.5.1</version>
 		</dependency>
+		<!-- 小爬爬 -->
+		<!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
+		<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.13.1</version>
+		</dependency>
 
 	</dependencies>
 
