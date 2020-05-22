@@ -4,7 +4,8 @@ import com.proxy.IUserService;
 import com.proxy.impl.UserServiceImpl;
 
 public class CglibProxyMain {
-
+	public static final int SZ = 20_000_000_00;
+	
 	public static void main(String[] args) throws Exception {
 		IUserService userService = new UserServiceImpl();
 		CglibProxy cglibProxy = new CglibProxy();
