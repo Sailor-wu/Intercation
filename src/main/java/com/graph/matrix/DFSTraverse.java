@@ -1,4 +1,4 @@
-package com.graph;
+package com.graph.matrix;
 /**
  * 遍历图：深度优先遍历搜索
  * @author W.hy

@@ -1,4 +1,4 @@
-package com.graph;
+package com.graph.matrix;
 /**
  * 创建基于邻接矩阵的无向图
  * @author W.hy

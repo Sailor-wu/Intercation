@@ -1,4 +1,4 @@
-package com.graph;
+package com.graph.matrix;
 
 import java.util.Scanner;
 
