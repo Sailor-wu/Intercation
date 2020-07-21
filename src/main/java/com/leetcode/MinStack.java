@@ -37,7 +37,7 @@ public class MinStack {
 
 class MStack{
 	// 最小链表栈
-	LinkedList<Integer> stack;
+	LinkedList<Integer> minStack;
 	// 最小链表栈
 	LinkedList<Integer> maxStack;
 	// 最小值
@@ -48,7 +48,7 @@ class MStack{
      * 构造链表
      */
     public MStack() {
-        stack = new LinkedList<>();
+        minStack = new LinkedList<>();
         maxStack = new LinkedList<Integer>();
     }
     
@@ -59,11 +59,11 @@ class MStack{
     public void push(int val) {
     	// 如果入栈 值小于最小值，需要替换 
     	if(val > min) {
-    		stack.push(val);
+    		minStack.push(val);
     	} else { 
     		// 栈---先进后出
-    		stack.push(min);
-    		stack.push(val);
+    		minStack.push(min);
+    		minStack.push(val);
     		min = val;
 		}
     	//  如果入栈 值大于最大值，需要替换 
@@ -82,11 +82,11 @@ class MStack{
     public void pop() {
     	// 如果出栈的数是最小的，需要把出栈的最小替换为次小的
     	// 比如：原来栈： 10 ， 8 ，7    7出栈，要把最小的替换为 8
-    	if (stack.peek() > min) {
-			stack.poll();
+    	if (minStack.peek() > min) {
+			minStack.poll();
 		}else {
-			stack.poll();
-			min = stack.poll();
+			minStack.poll();
+			min = minStack.poll();
 		}
     	if (maxStack.peek() < max) {
     		maxStack.poll();
@@ -101,7 +101,7 @@ class MStack{
      * @return
      */
     public int top() {
-    	return stack.peek();
+    	return minStack.peek();
     }
     /**
      * 获取最小的值<p>
