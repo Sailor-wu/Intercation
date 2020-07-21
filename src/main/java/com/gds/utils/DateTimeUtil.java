@@ -557,6 +557,9 @@ public class DateTimeUtil {
 		return parse(ymd, dateStr);
 	}
 
+	public static long getSystemDiffDataTime(long startTime) {
+		return System.currentTimeMillis()-startTime;
+	}
 	public static Date parseYMDHMS(String dateStr) {
 		return parse(ymdhms, dateStr);
 	}
