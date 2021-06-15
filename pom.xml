@@ -109,7 +109,7 @@
 		<dependency>
 			<groupId>org.apache.pdfbox</groupId>
 			<artifactId>pdfbox</artifactId>
-			<version>2.0.19</version>
+			<version>2.0.24</version>
 		</dependency>
 
 		<!-- 图片转文字 -->
